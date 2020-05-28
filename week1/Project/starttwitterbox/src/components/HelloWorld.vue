@@ -7,6 +7,12 @@
       </textarea>
       <button v-on:click="clicked">Submit</button>
     </div>
+
+    <div>
+      <ul>
+
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -22,6 +28,7 @@ export default {
   methods: {
     clicked() {
       this.tweets.unshift(this.tweet);
+      this.tweet = "";
       console.log(this.tweets);
     }
   },
