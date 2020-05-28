@@ -9,8 +9,10 @@
     </div>
 
     <div>
-      <ul>
-
+      <ul v-for="tweet in tweets" :key="tweet">
+        {{
+          tweet
+        }}
       </ul>
     </div>
   </div>
