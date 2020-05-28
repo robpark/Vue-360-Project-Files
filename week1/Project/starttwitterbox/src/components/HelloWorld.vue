@@ -3,9 +3,11 @@
     <h1>Project Twitter Box Client</h1>
 
     <div class="box">
-      <textarea type="text" v-model="tweet">
-      </textarea>
-      <button v-on:click="clicked">Submit</button>
+      <div>
+        <textarea type="text" v-model="tweet" />
+        <button v-on:click="clicked">Submit</button>
+      </div>
+      <div class="remaining">{{remaining}}</div>
     </div>
 
     <div>
@@ -21,6 +23,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
+      remaining: 280,
       tweet: "",
       tweets: []
     };
@@ -50,6 +53,10 @@ export default {
   align-items: center;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
   0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.remaining {
+  margin: 20px;
 }
 
 button {
