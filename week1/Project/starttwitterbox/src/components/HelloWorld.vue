@@ -4,7 +4,7 @@
 
     <div class="box">
       <div>
-        <textarea type="text" v-model="tweet" />
+        <textarea type="text" v-model="tweet" @input="updateRemaining" />
         <button v-on:click="clicked">Submit</button>
       </div>
       <div class="remaining">{{remaining}}</div>
@@ -22,8 +22,10 @@
 export default {
   name: "HelloWorld",
   data() {
+    const ALLOWED_SIZE = 280;
     return {
-      remaining: 280,
+      allowedSize: ALLOWED_SIZE,
+      remaining: ALLOWED_SIZE,
       tweet: "",
       tweets: []
     };
@@ -32,7 +34,10 @@ export default {
     clicked() {
       this.tweets.unshift(this.tweet);
       this.tweet = "";
-      console.log(this.tweets);
+      this.remaining = this.allowedSize;
+    },
+    updateRemaining(event) {
+      this.remaining = this.allowedSize - event.target.value.length;
     }
   },
   props: {
