@@ -37,7 +37,12 @@ export default {
       this.remaining = this.allowedSize;
     },
     updateRemaining(event) {
-      this.remaining = this.allowedSize - event.target.value.length;
+      let newRemaining = this.allowedSize - event.target.value.length;
+      if (newRemaining < 0) {
+        this.tweet = this.tweet.substring(0, this.allowedSize);
+      } else {
+        this.remaining = newRemaining;
+      }
     }
   },
   props: {
