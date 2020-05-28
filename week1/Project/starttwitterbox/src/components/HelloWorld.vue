@@ -3,8 +3,9 @@
     <h1>Project Twitter Box Client</h1>
 
     <div class="box">
-      <textarea type="text" />
-      <button>Submit</button>
+      <textarea type="text" v-model="tweet">
+      </textarea>
+      <button v-on:click="clicked">Submit</button>
     </div>
   </div>
 </template>
@@ -12,6 +13,18 @@
 <script>
 export default {
   name: "HelloWorld",
+  data() {
+    return {
+      tweet: "",
+      tweets: []
+    };
+  },
+  methods: {
+    clicked() {
+      this.tweets.unshift(this.tweet);
+      console.log(this.tweets);
+    }
+  },
   props: {
     msg: String
   }
@@ -29,8 +42,9 @@ export default {
   justify-content: center;
   align-items: center;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
+
 button {
   margin-left: 10px;
 }
