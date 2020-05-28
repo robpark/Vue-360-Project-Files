@@ -10,9 +10,7 @@
 
     <div>
       <ul v-for="tweet in tweets" :key="tweet">
-        {{
-          tweet
-        }}
+        <li>{{ tweet }}</li>
       </ul>
     </div>
   </div>
@@ -56,5 +54,9 @@ export default {
 
 button {
   margin-left: 10px;
+}
+
+li {
+  list-style: none;
 }
 </style>
