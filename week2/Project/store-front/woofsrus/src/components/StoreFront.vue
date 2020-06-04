@@ -1,9 +1,8 @@
 <template>
   <div>
-    <div v-for="product in products" :key="product.id">
-      {{ product.title }}
-      <img :src="require('../assets/' + product.image)" />
-      {{ product.price }}
+    <div class="product-tile" v-for="product in products" :key="product.id">
+      <div>{{ product.title }} {{ product.price }}</div>
+      <img :src="require('../assets/' + product.image)" height="150" width="200" />
     </div>
   </div>
 </template>
@@ -48,5 +47,10 @@ export default {
 <style scoped>
 li {
   list-style: none;
+}
+
+div.product-tile {
+  border: 5px solid darkgreen;
+  margin: 40px;
 }
 </style>

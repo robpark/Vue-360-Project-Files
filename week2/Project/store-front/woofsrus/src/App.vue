@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-      <img alt="Woof" src="./assets/paw-print.jpg" />
+    <div id="logo">
+      <img id="image" alt="Woof" src="./assets/paw-print.jpg" />
+      <span id="name">
+        Woofs'R'us
+      </span>
+    </div>
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
@@ -25,6 +30,12 @@
 
 #nav a {
   font-weight: bold;
+  color: #2c3e50;
+}
+
+#name {
+  font-weight: bold;
+  font-size: x-large;
   color: #2c3e50;
 }
 
