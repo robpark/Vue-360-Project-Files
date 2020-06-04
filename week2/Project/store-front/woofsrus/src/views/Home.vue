@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Woof" src="../assets/paw-print.jpg" />
-    <StoreFront msg="woof... woof..." />
+    <StoreFront/>
   </div>
 </template>
 

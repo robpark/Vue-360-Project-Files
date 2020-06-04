@@ -1,7 +1,9 @@
 <template>
   <div id="app">
+      <img alt="Woof" src="./assets/paw-print.jpg" />
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
+      |
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
